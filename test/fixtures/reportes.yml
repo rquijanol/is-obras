@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  clima: MyString
+  fecha: 2014-12-09
+  incidencias: MyText
+  cambios: MyText
+  residente: MyString
+  supervisor: MyString
+  obra_id: 
+
+two:
+  clima: MyString
+  fecha: 2014-12-09
+  incidencias: MyText
+  cambios: MyText
+  residente: MyString
+  supervisor: MyString
+  obra_id: 

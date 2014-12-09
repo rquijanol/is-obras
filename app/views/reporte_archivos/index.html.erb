@@ -1,0 +1,31 @@
+<h1>Listing reporte_archivos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Path</th>
+      <th>Tipo</th>
+      <th>Reporte</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @reporte_archivos.each do |reporte_archivo| %>
+      <tr>
+        <td><%= reporte_archivo.nombre %></td>
+        <td><%= reporte_archivo.path %></td>
+        <td><%= reporte_archivo.tipo %></td>
+        <td><%= reporte_archivo.reporte %></td>
+        <td><%= link_to 'Show', reporte_archivo %></td>
+        <td><%= link_to 'Edit', edit_reporte_archivo_path(reporte_archivo) %></td>
+        <td><%= link_to 'Destroy', reporte_archivo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Reporte archivo', new_reporte_archivo_path %>

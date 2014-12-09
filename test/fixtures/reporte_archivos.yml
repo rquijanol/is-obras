@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombre: MyString
+  path: MyString
+  tipo: 1
+  reporte_id: 
+
+two:
+  nombre: MyString
+  path: MyString
+  tipo: 1
+  reporte_id: 

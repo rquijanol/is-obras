@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @obra.nombre %>
+</p>
+
+<p>
+  <strong>Importe:</strong>
+  <%= @obra.importe %>
+</p>
+
+<p>
+  <strong>Plazo:</strong>
+  <%= @obra.plazo %>
+</p>
+
+<p>
+  <strong>Fechainicial:</strong>
+  <%= @obra.fechainicial %>
+</p>
+
+<p>
+  <strong>Fechafinal:</strong>
+  <%= @obra.fechafinal %>
+</p>
+
+<p>
+  <strong>Empresa:</strong>
+  <%= @obra.empresa %>
+</p>
+
+<%= link_to 'Edit', edit_obra_path(@obra) %> |
+<%= link_to 'Back', obras_path %>

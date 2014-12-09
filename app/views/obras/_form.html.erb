@@ -1,0 +1,41 @@
+<%= form_for(@obra) do |f| %>
+  <% if @obra.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@obra.errors.count, "error") %> prohibited this obra from being saved:</h2>
+
+      <ul>
+      <% @obra.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nombre %><br>
+    <%= f.text_field :nombre %>
+  </div>
+  <div class="field">
+    <%= f.label :importe %><br>
+    <%= f.text_field :importe %>
+  </div>
+  <div class="field">
+    <%= f.label :plazo %><br>
+    <%= f.number_field :plazo %>
+  </div>
+  <div class="field">
+    <%= f.label :fechainicial %><br>
+    <%= f.date_select :fechainicial %>
+  </div>
+  <div class="field">
+    <%= f.label :fechafinal %><br>
+    <%= f.date_select :fechafinal %>
+  </div>
+  <div class="field">
+    <%= f.label :empresa_id %><br>
+    <%= f.text_field :empresa_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

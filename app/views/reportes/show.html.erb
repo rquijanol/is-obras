@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Clima:</strong>
+  <%= @reporte.clima %>
+</p>
+
+<p>
+  <strong>Fecha:</strong>
+  <%= @reporte.fecha %>
+</p>
+
+<p>
+  <strong>Incidencias:</strong>
+  <%= @reporte.incidencias %>
+</p>
+
+<p>
+  <strong>Cambios:</strong>
+  <%= @reporte.cambios %>
+</p>
+
+<p>
+  <strong>Residente:</strong>
+  <%= @reporte.residente %>
+</p>
+
+<p>
+  <strong>Supervisor:</strong>
+  <%= @reporte.supervisor %>
+</p>
+
+<p>
+  <strong>Obra:</strong>
+  <%= @reporte.obra %>
+</p>
+
+<%= link_to 'Edit', edit_reporte_path(@reporte) %> |
+<%= link_to 'Back', reportes_path %>

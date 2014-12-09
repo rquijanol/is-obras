@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Categoria:</strong>
+  <%= @reporte_detalle.categoria %>
+</p>
+
+<p>
+  <strong>Numeropersonas:</strong>
+  <%= @reporte_detalle.numeropersonas %>
+</p>
+
+<p>
+  <strong>Reporte:</strong>
+  <%= @reporte_detalle.reporte %>
+</p>
+
+<%= link_to 'Edit', edit_reporte_detalle_path(@reporte_detalle) %> |
+<%= link_to 'Back', reporte_detalles_path %>

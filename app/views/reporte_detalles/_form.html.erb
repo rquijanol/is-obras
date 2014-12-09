@@ -1,0 +1,29 @@
+<%= form_for(@reporte_detalle) do |f| %>
+  <% if @reporte_detalle.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@reporte_detalle.errors.count, "error") %> prohibited this reporte_detalle from being saved:</h2>
+
+      <ul>
+      <% @reporte_detalle.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :categoria %><br>
+    <%= f.text_field :categoria %>
+  </div>
+  <div class="field">
+    <%= f.label :numeropersonas %><br>
+    <%= f.text_field :numeropersonas %>
+  </div>
+  <div class="field">
+    <%= f.label :reporte_id %><br>
+    <%= f.text_field :reporte_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

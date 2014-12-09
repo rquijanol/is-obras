@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @reporte_archivo.nombre %>
+</p>
+
+<p>
+  <strong>Path:</strong>
+  <%= @reporte_archivo.path %>
+</p>
+
+<p>
+  <strong>Tipo:</strong>
+  <%= @reporte_archivo.tipo %>
+</p>
+
+<p>
+  <strong>Reporte:</strong>
+  <%= @reporte_archivo.reporte %>
+</p>
+
+<%= link_to 'Edit', edit_reporte_archivo_path(@reporte_archivo) %> |
+<%= link_to 'Back', reporte_archivos_path %>

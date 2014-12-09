@@ -1,0 +1,45 @@
+<%= form_for(@reporte) do |f| %>
+  <% if @reporte.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@reporte.errors.count, "error") %> prohibited this reporte from being saved:</h2>
+
+      <ul>
+      <% @reporte.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :clima %><br>
+    <%= f.text_field :clima %>
+  </div>
+  <div class="field">
+    <%= f.label :fecha %><br>
+    <%= f.date_select :fecha %>
+  </div>
+  <div class="field">
+    <%= f.label :incidencias %><br>
+    <%= f.text_area :incidencias %>
+  </div>
+  <div class="field">
+    <%= f.label :cambios %><br>
+    <%= f.text_area :cambios %>
+  </div>
+  <div class="field">
+    <%= f.label :residente %><br>
+    <%= f.text_field :residente %>
+  </div>
+  <div class="field">
+    <%= f.label :supervisor %><br>
+    <%= f.text_field :supervisor %>
+  </div>
+  <div class="field">
+    <%= f.label :obra_id %><br>
+    <%= f.text_field :obra_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombre: MyString
+  importe: 1.5
+  plazo: 1
+  fechainicial: 2014-12-09
+  fechafinal: 2014-12-09
+  empresa_id: 
+
+two:
+  nombre: MyString
+  importe: 1.5
+  plazo: 1
+  fechainicial: 2014-12-09
+  fechafinal: 2014-12-09
+  empresa_id: 

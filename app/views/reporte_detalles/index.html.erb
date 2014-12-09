@@ -1,0 +1,29 @@
+<h1>Listing reporte_detalles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Categoria</th>
+      <th>Numeropersonas</th>
+      <th>Reporte</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @reporte_detalles.each do |reporte_detalle| %>
+      <tr>
+        <td><%= reporte_detalle.categoria %></td>
+        <td><%= reporte_detalle.numeropersonas %></td>
+        <td><%= reporte_detalle.reporte %></td>
+        <td><%= link_to 'Show', reporte_detalle %></td>
+        <td><%= link_to 'Edit', edit_reporte_detalle_path(reporte_detalle) %></td>
+        <td><%= link_to 'Destroy', reporte_detalle, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Reporte detalle', new_reporte_detalle_path %>
