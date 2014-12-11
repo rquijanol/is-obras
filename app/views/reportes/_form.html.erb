@@ -1,4 +1,4 @@
-<%= form_for(@reporte) do |f| %>
+<%= form_for (@reporte) do |f| %>
   <% if @reporte.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@reporte.errors.count, "error") %> prohibited this reporte from being saved:</h2>
@@ -36,9 +36,9 @@
     <%= f.text_field :supervisor %>
   </div>
   <div class="field">
-    <%= f.label :obra_id %><br>
-    <%= f.text_field :obra_id %>
+    <%= f.label @reporte.obra.nombre %>
   </div>
+  <%= f.hidden_field :obra_id, { :value => @reporte.obra.id } %>
   <div class="actions">
     <%= f.submit %>
   </div>

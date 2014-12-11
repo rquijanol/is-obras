@@ -23,7 +23,7 @@
         <td><%= reporte.cambios %></td>
         <td><%= reporte.residente %></td>
         <td><%= reporte.supervisor %></td>
-        <td><%= reporte.obra %></td>
+        <td><%= reporte.obra.nombre %></td>
         <td><%= link_to 'Show', reporte %></td>
         <td><%= link_to 'Edit', edit_reporte_path(reporte) %></td>
         <td><%= link_to 'Destroy', reporte, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -34,4 +34,4 @@
 
 <br>
 
-<%= link_to 'New Reporte', new_reporte_path %>
+<%= link_to 'New Reporte', new_obra_reporte_path(@obra.id) %>

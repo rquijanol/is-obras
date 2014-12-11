@@ -1,3 +1,4 @@
 class Empresa < ActiveRecord::Base
-  has_many :obra
+  has_many :obras
+  validates :nombre, presence: true
 end

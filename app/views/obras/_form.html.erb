@@ -21,19 +21,19 @@
   </div>
   <div class="field">
     <%= f.label :plazo %><br>
-    <%= f.number_field :plazo %>
+    <%= f.text_field :plazo, :disabled =>true %>
   </div>
   <div class="field">
     <%= f.label :fechainicial %><br>
-    <%= f.date_select :fechainicial %>
+    <%= f.text_field :fechainicial %>
   </div>
   <div class="field">
     <%= f.label :fechafinal %><br>
-    <%= f.date_select :fechafinal %>
+    <%= f.text_field :fechafinal %>
   </div>
   <div class="field">
     <%= f.label :empresa_id %><br>
-    <%= f.collection_select :empresa, Empresa.all, :id, :nombre, :selected => @obra.empresa_id  %>
+    <%= f.collection_select( :empresa_id, Empresa.all, :id, :nombre, { :prompt => true, :selected => @obra.empresa_id} )%>
     
   </div>
   <div class="actions">

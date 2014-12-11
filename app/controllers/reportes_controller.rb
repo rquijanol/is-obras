@@ -4,7 +4,16 @@ class ReportesController < ApplicationController
   # GET /reportes
   # GET /reportes.json
   def index
-    @reportes = Reporte.all
+   if params[:obra_id] != nil
+    @obra = Obra.find(params[:obra_id])
+    @reportes = @obra.reportes.all #.paginate(page: params[:page])
+  else
+    @reportes= [];
+  end
+#    @reportes = @  Reporte.where(params[:obra_id] == :obra_id)
+    #else
+   # redirect_to(obras_path)
+    #end
   end
 
   # GET /reportes/1
@@ -14,7 +23,8 @@ class ReportesController < ApplicationController
 
   # GET /reportes/new
   def new
-    @reporte = Reporte.new
+    @obra = Obra.find(params[:obra_id])
+    @reporte = @obra.reportes.new#  Reporte.new(params[:obra_id])
   end
 
   # GET /reportes/1/edit
@@ -24,15 +34,17 @@ class ReportesController < ApplicationController
   # POST /reportes
   # POST /reportes.json
   def create
+    
+  #  @obra = Obra.find(params[:obra_id])
     @reporte = Reporte.new(reporte_params)
 
     respond_to do |format|
       if @reporte.save
-        format.html { redirect_to @reporte, notice: 'Reporte was successfully created.' }
-        format.json { render :show, status: :created, location: @reporte }
+      format.html { redirect_to obra_reportes_path(@reporte.obra_id), notice: 'Reporte was successfully created.' }
+      #  format.json { render :show, status: :created, location: @reporte }
       else
-        format.html { render :new }
-        format.json { render json: @reporte.errors, status: :unprocessable_entity }
+       format.html { redirect_to new_obra_reporte_path(@obra.id) }
+      # format.json { render json: @reporte.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -70,5 +82,9 @@ class ReportesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def reporte_params
       params.require(:reporte).permit(:clima, :fecha, :incidencias, :cambios, :residente, :supervisor, :obra_id)
+    end
+    
+    def filtering_params(params)
+      params.slice(:status, :location, :starts_with)
     end
 end

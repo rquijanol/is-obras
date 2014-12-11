@@ -10,15 +10,22 @@ Rails.application.routes.draw do
 
   get 'contact' => 'static_pages#contact'
   
-  resources :reporte_archivos
+  #resources :reporte_archivos
 
-  resources :reporte_detalles
+  #resources :reporte_detalles
 
-  resources :reportes
+  resources :reportes  do
+    resources :reportes_detalles
+    resources :reportes_archivos
+  end
 
-  resources :obras
+  resources :obras do
+    resources :reportes
+  end
 
-  resources :empresas
+  resources :empresas do
+    resources :obras
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
