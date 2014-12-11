@@ -10,10 +10,6 @@ class ReportesController < ApplicationController
   else
     @reportes= [];
   end
-#    @reportes = @  Reporte.where(params[:obra_id] == :obra_id)
-    #else
-   # redirect_to(obras_path)
-    #end
   end
 
   # GET /reportes/1

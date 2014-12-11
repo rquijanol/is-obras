@@ -10,7 +10,4 @@ class Reporte < ActiveRecord::Base
   
   validates :obra_id, presence: true
   
-#  def initialize(obra_id)
-#    @obra_id=obra_id
-#  end
 end

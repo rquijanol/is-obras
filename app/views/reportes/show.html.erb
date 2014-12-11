@@ -35,5 +35,4 @@
   <%= @reporte.obra.nombre %>
 </p>
 
-<%= link_to 'Edit', edit_reporte_path(@reporte) %> |
-<%= link_to 'Back', reportes_path %>
+<%= link_to 'Back', redirect_to obra_reportes_path(@reporte.obra_id) %>
