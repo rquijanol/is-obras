@@ -11,18 +11,8 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :categoria %><br>
-    <%= f.text_field :categoria %>
-  </div>
-  <div class="field">
-    <%= f.label :numeropersonas %><br>
-    <%= f.text_field :numeropersonas %>
-  </div>
-  <div class="field">
-    <%= f.label :reporte_id %><br>
-    <%= f.text_field :reporte_id %>
-  </div>
+  <%= render :partial => 'reporte_detalle', :object => f -%>
+  
   <div class="actions">
     <%= f.submit %>
   </div>

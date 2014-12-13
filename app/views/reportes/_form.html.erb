@@ -39,6 +39,16 @@
     <%= f.label @reporte.obra.nombre %>
   </div>
   <%= f.hidden_field :obra_id, { :value => @reporte.obra.id } %>
+  
+  
+ <div id="detalles">
+  <h3>Tasks</h3>
+  <% f.fields_for :reporte_detalle do |reporte_detalles_form| -%>
+   <%= render :partial => 'reporte_detalles/reporte_detalles', :locals => { :f => reporte_detalles_form } %>
+  <% end -%>
+</div> 
+  
+  
   <div class="actions">
     <%= f.submit %>
   </div>

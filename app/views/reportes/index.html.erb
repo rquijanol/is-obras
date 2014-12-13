@@ -11,7 +11,7 @@
       <th>Cambios</th>
       <th>Residente</th>
       <th>Supervisor</th>
-      <th colspan="3">Acciones</th>
+      <th colspan="2">Acciones</th>
     </tr>
   </thead>
 
@@ -38,9 +38,6 @@
         </td>
         <td>
           <%=link_to 'Ver', reporte %>
-        </td>
-        <td>
-          <%=link_to 'Editar', edit_reporte_path(reporte) %>
         </td>
         <td>
           <%=link_to 'Borrar', reporte, method: :delete, data: { confirm: 'Are you sure?' } %>

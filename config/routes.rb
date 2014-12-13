@@ -10,13 +10,12 @@ Rails.application.routes.draw do
 
   get 'contact' => 'static_pages#contact'
   
-  #resources :reporte_archivos
+  resources :reporte_archivos
 
-  #resources :reporte_detalles
+  resources :reporte_detalles
 
   resources :reportes  do
-    resources :reportes_detalles
-    resources :reportes_archivos
+    resources :reporte_detalles, :reporte_archivos
   end
 
   resources :obras do

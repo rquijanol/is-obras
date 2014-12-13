@@ -15,12 +15,15 @@ class ReportesController < ApplicationController
   # GET /reportes/1
   # GET /reportes/1.json
   def show
+    @reporte = Reporte.find(params[:id])
+    @reporte_detalles = @reporte.reporte_detalles.paginate(page: params[:page])
   end
 
   # GET /reportes/new
   def new
     @obra = Obra.find(params[:obra_id])
-    @reporte = @obra.reportes.new#  Reporte.new(params[:obra_id])
+    @reporte = @obra.reportes.new
+    
   end
 
   # GET /reportes/1/edit
@@ -36,7 +39,7 @@ class ReportesController < ApplicationController
 
     respond_to do |format|
       if @reporte.save
-      format.html { redirect_to obra_reportes_path(@reporte.obra_id), notice: 'Reporte was successfully created.' }
+      format.html { redirect_to obra_reporte_path(@obra.id), notice: 'Reporte was successfully created.' }
       #  format.json { render :show, status: :created, location: @reporte }
       else
        format.html { redirect_to new_obra_reporte_path(@obra.id) }

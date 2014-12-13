@@ -15,6 +15,8 @@
 //= require bootstrap
 //= require turbolinks
 //= require_tree
+//= require jquery-fileupload/basic
+//= require jquery-fileupload/vendor/tmpl
 //= require bootstrap-toggle-buttons
 //= require jquery-ui
 

@@ -4,17 +4,20 @@ class ReporteDetallesController < ApplicationController
   # GET /reporte_detalles
   # GET /reporte_detalles.json
   def index
-    @reporte_detalles = ReporteDetalle.all
+    @reporte = Reporte.find(params[:reporte_id])
+    @reporte_detalles = @reporte.reporte_detalles.all
   end
 
   # GET /reporte_detalles/1
   # GET /reporte_detalles/1.json
   def show
+    @reporte_detalle = ReporteDetalle.find(params[:id])
   end
 
   # GET /reporte_detalles/new
   def new
-    @reporte_detalle = ReporteDetalle.new
+    @reporte = Reporte.find(params[:reporte_id])
+    @reporte_detalle =@reporte.reporte_detalles.new
   end
 
   # GET /reporte_detalles/1/edit

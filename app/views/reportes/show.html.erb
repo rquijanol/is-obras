@@ -1,5 +1,9 @@
 <p id="notice"><%= notice %></p>
 
+
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
 <p>
   <strong>Clima:</strong>
   <%= @reporte.clima %>
@@ -34,5 +38,15 @@
   <strong>Obra:</strong>
   <%= @reporte.obra.nombre %>
 </p>
+  <div class="col-md-8">
+    <% if @reporte.reporte_detalles.any? %>
+      <h3>Detalles (<%= @reporte.reporte_detalles.count %>)</h3>
+      <ol class="reporte_detalle">
+        <%= render @reporte_detalles %>
+      </ol>
+      <%= will_paginate @reporte_detalles %>
+    <% end %>
+  </div>
+  <%= link_to 'Add phone number', reporte_reporte_detalles_path(@reporte.id)	%>
+</div>
 
-<%= link_to 'Back', redirect_to obra_reportes_path(@reporte.obra_id) %>
