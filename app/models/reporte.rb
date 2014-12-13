@@ -5,8 +5,8 @@ class Reporte < ActiveRecord::Base
   has_many :reporte_detalles, dependent: :destroy
   has_many :reporte_archivos, dependent: :destroy
   
-  accepts_nested_attributes_for :reporte_archivos
-  accepts_nested_attributes_for :reporte_detalles
+  accepts_nested_attributes_for :reporte_archivos,  :reject_if => :all_blank, :allow_destroy => true
+  accepts_nested_attributes_for :reporte_detalles,  :reject_if => :all_blank, :allow_destroy => true
   
   validates :obra_id, presence: true
   

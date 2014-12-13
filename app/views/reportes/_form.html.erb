@@ -40,13 +40,24 @@
   </div>
   <%= f.hidden_field :obra_id, { :value => @reporte.obra.id } %>
   
+   
+ <fieldset id="recipe-ingredients">
+  <h3>detalles</h3>
+   <ol> 
+  <% f.fields_for :reporte_detalles do |reporte_detalle| %>
+   
+   <%= render 'reporte_detalle_fields', :f => reporte_detalle %>
   
- <div id="detalles">
-  <h3>Tasks</h3>
-  <% f.fields_for :reporte_detalle do |reporte_detalles_form| -%>
-   <%= render :partial => 'reporte_detalles/reporte_detalles', :locals => { :f => reporte_detalles_form } %>
-  <% end -%>
-</div> 
+  <% end %>
+  </ol>
+  <%= link_to_add_association 'add detalle', f, :reporte_detalles,
+  'data-association-insertion-node' => "#recipe-ingredients ol", 
+    'data-association-insertion-method' => "append"
+   
+  
+  %>
+  </fieldset> 
+  
   
   
   <div class="actions">

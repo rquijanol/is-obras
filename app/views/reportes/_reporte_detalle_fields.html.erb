@@ -1,10 +1,10 @@
-  <div class="reporte_detalle">
+<li class="control-group nested-fields">
   <div class="field">
     <%= f.label :categoria %><br>
     <%= f.text_field :categoria %>
-  </div>
-  <div class="field">
+  
     <%= f.label :numeropersonas %><br>
     <%= f.text_field :numeropersonas %>
-  </div>
-  <div class="task">
+  
+  <%= link_to_remove_association "remove task", f%></div>
+  </li>
