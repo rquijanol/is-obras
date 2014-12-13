@@ -1,5 +1,4 @@
 class Reporte < ActiveRecord::Base
-  include Filterable
   belongs_to :obra
   default_scope -> { order(created_at: :desc) }
   has_many :reporte_detalles, dependent: :destroy

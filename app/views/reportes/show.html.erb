@@ -4,15 +4,20 @@
 <div class="row">
   <aside class="col-md-4">
     <section class="user_info">
+      
+      <p>
+  <h2><%= @reporte.obra.nombre %></h2>
+</p>
+<p>
+  <strong>Fecha:</strong>
+  <%= @reporte.fecha %>
+</p>
 <p>
   <strong>Clima:</strong>
   <%= @reporte.clima %>
 </p>
 
-<p>
-  <strong>Fecha:</strong>
-  <%= @reporte.fecha %>
-</p>
+
 
 <p>
   <strong>Incidencias:</strong>
@@ -33,20 +38,15 @@
   <strong>Supervisor:</strong>
   <%= @reporte.supervisor %>
 </p>
-
-<p>
-  <strong>Obra:</strong>
-  <%= @reporte.obra.nombre %>
-</p>
-  <div class="col-md-8">
-    <% if @reporte.reporte_detalles.any? %>
-      <h3>Detalles (<%= @reporte.reporte_detalles.count %>)</h3>
-      <ol class="reporte_detalle">
-        <%= render @reporte_detalles %>
-      </ol>
-      <%= will_paginate @reporte_detalles %>
-    <% end %>
-  </div>
-  <%= link_to 'Add phone number', reporte_reporte_detalles_path(@reporte.id)	%>
-</div>
+  
+<table>
+  <%= @reporte.reporte_detalles.each do |task|%>
+  <tr>
+  <td>
+    <%=  task.numeropersonas%>
+  </td>
+  </tr>
+  <%end%>
+  
+</table>
 

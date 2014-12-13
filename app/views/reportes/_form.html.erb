@@ -10,7 +10,8 @@
       </ul>
     </div>
   <% end %>
-
+   <h2> <%= @reporte.obra.nombre %></h2>
+  
   <div class="field">
     <%= f.label :clima %><br>
     <%= f.text_field :clima %>
@@ -35,29 +36,25 @@
     <%= f.label :supervisor %><br>
     <%= f.text_field :supervisor %>
   </div>
-  <div class="field">
-    <%= f.label @reporte.obra.nombre %>
-  </div>
+ 
   <%= f.hidden_field :obra_id, { :value => @reporte.obra.id } %>
   
    
- <fieldset id="recipe-ingredients">
-  <h3>detalles</h3>
-   <ol> 
+
+  <h3>Detalles</h3>
+  <div id="reporte_detalles">
   <% f.fields_for :reporte_detalles do |reporte_detalle| %>
    
-   <%= render 'reporte_detalle_fields', :f => reporte_detalle %>
+   <%= render 'reporte_detalles', :f => reporte_detalle %>
   
   <% end %>
-  </ol>
-  <%= link_to_add_association 'add detalle', f, :reporte_detalles,
-  'data-association-insertion-node' => "#recipe-ingredients ol", 
-    'data-association-insertion-method' => "append"
-   
-  
-  %>
-  </fieldset> 
-  
+
+     <div class="links"> 
+  <%= link_to_add_association 'add detalle', f, :reporte_detalles%>
+
+     </div>
+  </div>
+
   
   
   <div class="actions">

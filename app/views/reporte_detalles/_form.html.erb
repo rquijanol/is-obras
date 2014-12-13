@@ -11,8 +11,11 @@
     </div>
   <% end %>
 
-  <%= render :partial => 'reporte_detalle', :object => f -%>
+    <%= f.label :categoria %><br>
+    <%= f.select :categoria, options_for_select(categoria_combo) %>
   
+    <%= f.label :numeropersonas %><br>
+    <%= f.number_field :numeropersonas %>
   <div class="actions">
     <%= f.submit %>
   </div>

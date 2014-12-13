@@ -16,8 +16,7 @@ class ReporteDetallesController < ApplicationController
 
   # GET /reporte_detalles/new
   def new
-    @reporte = Reporte.find(params[:reporte_id])
-    @reporte_detalle =@reporte.reporte_detalles.new
+    @reporte_detalle =ReporteDetalle.new
   end
 
   # GET /reporte_detalles/1/edit
