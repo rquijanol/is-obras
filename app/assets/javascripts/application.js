@@ -21,11 +21,4 @@
 //= require bootstrap-toggle-buttons
 //= require jquery-ui
 
-$(function() {
-  $("#obra_fechainicial").datepicker();
-});
-
-$(function() {
-  $("#obra_fechafinal").datepicker();
-});
 
