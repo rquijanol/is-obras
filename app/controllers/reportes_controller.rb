@@ -42,7 +42,7 @@ class ReportesController < ApplicationController
       format.html { redirect_to obra_reportes_path(@reporte.obra_id), notice: 'Reporte was successfully created.' }
       #  format.json { render :show, status: :created, location: @reporte }
       else
-       format.html { redirect_to new_obra_reporte_path(@obra.id) }
+       format.html { redirect_to new_obra_reporte_path(@reporte.obra_id) }
       # format.json { render json: @reporte.errors, status: :unprocessable_entity }
       end
     end
