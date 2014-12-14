@@ -1,6 +1,7 @@
 <%= form_for(@reporte_archivo) do |f| %>
   <% if @reporte_archivo.errors.any? %>
     <div id="error_explanation">
+       <div class="alert alert-danger">
       <h2><%= pluralize(@reporte_archivo.errors.count, "error") %> prohibited this reporte_archivo from being saved:</h2>
 
       <ul>
@@ -9,6 +10,7 @@
       <% end %>
       </ul>
     </div>
+      </div>
   <% end %>
 
   <div class="field">

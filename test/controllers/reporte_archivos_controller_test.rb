@@ -1,6 +1,7 @@
 require 'test_helper'
 
 class ReporteArchivosControllerTest < ActionController::TestCase
+  include Devise::TestHelpers
   setup do
     @reporte_archivo = reporte_archivos(:one)
   end

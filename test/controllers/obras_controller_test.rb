@@ -1,6 +1,7 @@
 require 'test_helper'
 
 class ObrasControllerTest < ActionController::TestCase
+  include Devise::TestHelpers
   setup do
     @obra = obras(:one)
   end

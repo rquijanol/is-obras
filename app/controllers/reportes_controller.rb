@@ -67,7 +67,7 @@ class ReportesController < ApplicationController
   def destroy
     @reporte.destroy
     respond_to do |format|
-      format.html { redirect_to reportes_url, notice: 'Reporte was successfully destroyed.' }
+      format.html { redirect_to obra_reportes_path(@reporte.obra_id), notice: 'Reporte was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

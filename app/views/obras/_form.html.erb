@@ -1,6 +1,7 @@
 <%= form_for(@obra) do |f| %>
   <% if @obra.errors.any? %>
     <div id="error_explanation">
+       <div class="alert alert-danger">
       <h2><%= pluralize(@obra.errors.count, "error") %> prohibited this obra from being saved:</h2>
 
       <ul>
@@ -9,6 +10,7 @@
       <% end %>
       </ul>
     </div>
+      </div>
   <% end %>
 
   <div class="field">

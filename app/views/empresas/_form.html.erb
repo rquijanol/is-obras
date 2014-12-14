@@ -1,6 +1,7 @@
 <%= form_for(@empresa) do |f| %>
   <% if @empresa.errors.any? %>
     <div id="error_explanation">
+       <div class="alert alert-danger">
       <h2><%= pluralize(@empresa.errors.count, "error") %> prohibited this empresa from being saved:</h2>
 
       <ul>
@@ -8,6 +9,7 @@
         <li><%= message %></li>
       <% end %>
       </ul>
+        </div>
     </div>
   <% end %>
   

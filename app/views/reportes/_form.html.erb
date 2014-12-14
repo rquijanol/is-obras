@@ -1,6 +1,7 @@
 <%= form_for (@reporte) do |f| %>
   <% if @reporte.errors.any? %>
     <div id="error_explanation">
+       <div class="alert alert-danger">
       <h2><%= pluralize(@reporte.errors.count, "error") %> prohibited this reporte from being saved:</h2>
 
       <ul>
@@ -8,6 +9,7 @@
         <li><%= message %></li>
       <% end %>
       </ul>
+    </div>
     </div>
   <% end %>
    <h2> <%= @reporte.obra.nombre %></h2>
@@ -50,7 +52,7 @@
   <% end %>
 
      <div class="links"> 
-  <%= link_to_add_association 'add detalle', f, :reporte_detalles%>
+  <%= link_to_add_association 'Agregar', f, :reporte_detalles, class: "btn btn-success"%>
 
      </div>
   </div>
