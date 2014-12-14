@@ -167,12 +167,9 @@ DEPENDENCIES
   jquery-rails
   jquery-rails-cdn
   jquery-ui-rails
-<<<<<<< HEAD
-  pg (= 0.17.1)
-=======
   mini_backtrace (~> 0.1.3)
   minitest-reporters (~> 1.0.5)
->>>>>>> testing-models
+  pg (= 0.17.1)
   rails (= 4.1.6)
   rails-bootstrap-toggle-buttons
   rails_12factor (= 0.0.2)
