@@ -38,15 +38,15 @@
   <strong>Supervisor:</strong>
   <%= @reporte.supervisor %>
 </p>
-  
-<table>
-  <%= @reporte.reporte_detalles.each do |task|%>
-  <tr>
-  <td>
-    <%=  task.numeropersonas%>
-  </td>
-  </tr>
-  <%end%>
-  
-</table>
-
+  </aside>
+ <div class="col-md-8">
+    <% if @reporte.reporte_detalles.any? %>
+      <strong>Detalles (<%= @reporte.reporte_detalles.count %>)</strong>
+      <ol class="reporte_detalles">
+        <%= render @reporte_detalles %>
+      </ol>
+      <%= will_paginate @reporte_detalles %>
+    <% end %>
+  </div>
+  </div>
+<%= link_to 'Back', ,obra_reportes_path(@reporte.obra_id) %>

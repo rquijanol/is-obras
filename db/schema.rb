@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141213205517) do
+ActiveRecord::Schema.define(version: 20141214020433) do
 
   create_table "empresas", force: true do |t|
     t.string   "nombre"
@@ -52,11 +52,11 @@ ActiveRecord::Schema.define(version: 20141213205517) do
   add_index "reporte_archivos", ["reporte_id"], name: "index_reporte_archivos_on_reporte_id"
 
   create_table "reporte_detalles", force: true do |t|
-    t.string   "categoria"
     t.integer  "numeropersonas"
     t.integer  "reporte_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "categoria"
   end
 
   add_index "reporte_detalles", ["reporte_id"], name: "index_reporte_detalles_on_reporte_id"

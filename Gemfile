@@ -46,6 +46,6 @@ gem 'bootstrap-will_paginate', '0.0.10'
 gem 'bootstrap-sass',       '3.2.0.0'
 gem 'devise'
 
-
+gem 'jquery-rails-cdn'
 gem 'minitest-reporters', '~>1.0.5', group: :test
 gem 'mini_backtrace',     '~>0.1.3', group: :test
