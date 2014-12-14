@@ -1,6 +1,6 @@
 <div class="nested-fields">
     <%= f.label :categoria %><br>
-    <%= f.select :categoria, options_for_select(ReporteDetalle.categoria.keys.to_a,{ :prompt => true}) %>
+    <%= f.select :categoria, options_for_select(ReporteDetalle.categoria.keys.to_a) %>
   
     <%= f.label :numeropersonas %><br>
     <%= f.number_field :numeropersonas %>
