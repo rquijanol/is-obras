@@ -28,7 +28,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 
 # Use unicorn as the app server
 # gem 'unicorn'
@@ -45,6 +45,7 @@ gem 'will_paginate',           '3.0.7'
 gem 'bootstrap-will_paginate', '0.0.10'
 gem 'bootstrap-sass',       '3.2.0.0'
 gem 'devise'
-#gem 'omniauth'
-#gem 'omniauth-twitter'
 
+
+gem 'minitest-reporters', '~>1.0.5', group: :test
+gem 'mini_backtrace',     '~>0.1.3', group: :test
