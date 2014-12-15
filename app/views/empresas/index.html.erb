@@ -1,7 +1,11 @@
 <h1>Empresas</h1>
 
-<%= link_to 'New Empresa', new_empresa_path %>
+<%= link_to new_empresa_path, class: "btn btn-success" do%>
+ <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Nueva
+<% end %>
 
+<br>
+<br>
 <table class="table table-bordered">
   <thead>
     <tr>
@@ -15,9 +19,9 @@
       <tr>
          <td><%= empresa.nombre %></td>
          <td><%= empresa.descripcion %></td>
-        <td><%= link_to 'Show', empresa %></td>
-        <td><%= link_to 'Edit', edit_empresa_path(empresa) %></td>
-        <td><%= link_to 'Destroy', empresa, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td align="center"><%= link_to 'Show', empresa%></td>
+        <td  align="center"><%= link_to 'Edit', edit_empresa_path(empresa)%></td>
+        <td align="center"><%= link_to 'Destroy', empresa, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
