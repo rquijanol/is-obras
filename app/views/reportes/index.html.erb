@@ -1,7 +1,11 @@
 <h1><%=@obra.nombre%> - <%=@obra.empresa.nombre%></h1>
 <h2>Reportes</h2>
 
-<%=link_to 'Nuevo', new_obra_reporte_path(@obra.id) %>
+<%=link_to new_obra_reporte_path(@obra.id), class: "btn btn-success" do%>
+ <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Nuevo
+<% end %>
+<br>
+<br>
 <table  class="table table-bordered">
   <thead>
     <tr>
@@ -48,5 +52,5 @@
 </table>
 
 <br>
-<%= link_to 'Back', obras_path %>
+<%= link_to 'Back', obras_path, class: "btn btn-default" %>
 

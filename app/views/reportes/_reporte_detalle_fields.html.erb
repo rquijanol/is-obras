@@ -1,8 +1,26 @@
 <div class="nested-fields">
-    <%= f.label :categoria %><br>
+    <table>
+        <tr>
+            <td>
+    <%= f.label "Categoria" %>
+    </td>
+    <td>
     <%= f.select :categoria, options_for_select(ReporteDetalle.categoria.keys.to_a) %>
-  
-    <%= f.label :numeropersonas %><br>
+     </td>
+        </tr> 
+     <tr>
+         <td>
+    <%= f.label "Numero" %>
+    </td><td>
     <%= f.number_field :numeropersonas %>
-  <%= link_to_remove_association "Quitar", f ,class: "btn btn-danger"%>
+       
+            </td>
+    </tr>
+   <tr>
+       <td>
+    <%= link_to_remove_association "Quitar", f ,class: "btn btn-danger"%>
+    </td>
+    </tr>
+     </table>
+   
 </div>
