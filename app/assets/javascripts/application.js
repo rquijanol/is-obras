@@ -16,8 +16,6 @@
 //= require turbolinks
 //= require_tree
 //= require cocoon
-//= require jquery-fileupload/basic
-//= require jquery-fileupload/vendor/tmpl
 //= require bootstrap-toggle-buttons
 
 
