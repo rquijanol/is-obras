@@ -3,8 +3,14 @@ require 'dragonfly/dropbox_data_store'
 
 # Configure
 Dragonfly.app.configure do
-  plugin :imagemagick
-
+ # plugin :imagemagick
+url_format "/media/:job/:name"
+ 
+if Rails.env.development? || Rails.env.test?
+  datastore :file,
+            root_path: Rails.root.join('public/system/dragonfly', Rails.env),
+            server_root: Rails.root.join('public')
+          else
  datastore :dropbox,
   app_key:              ENV['DROPBOX_APP_KEY'],
   app_secret:           ENV['DROPBOX_APP_SECRET'],
@@ -14,6 +20,7 @@ Dragonfly.app.configure do
   root_path:            Rails.env # optional
 end
 
+end
 # Logger
 Dragonfly.logger = Rails.logger
 

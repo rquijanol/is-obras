@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
   get 'contact' => 'static_pages#contact'
   
+ #  get 'photos' => 'photos#index'
+  
   #resources :reporte_archivos
 
   #resources :reporte_detalles
