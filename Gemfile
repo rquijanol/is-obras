@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+ruby '2.0.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.6'
 # Use sqlite3 as the database for Active Record
@@ -49,9 +49,12 @@ gem 'devise'
 group :production do
   gem 'pg',             '0.17.1'
   gem 'rails_12factor', '0.0.2'
+  gem 'rack-cache', :require => 'rack/cache'
 end
 
-#gem 'jquery-rails-cdn'
+
 gem 'minitest-reporters', '~>1.0.5', group: :test
 gem 'mini_backtrace',     '~>0.1.3', group: :test
 
+gem 'dragonfly', '~> 1.0.7'
+gem 'dragonfly-dropbox_data_store'

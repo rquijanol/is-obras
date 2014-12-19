@@ -16,6 +16,9 @@ Rails.application.routes.draw do
 
   #resources :reporte_detalles
 
+  resources :photos, only: [:new, :create, :index]
+
+
   resources :reportes  do
     resources :reporte_detalles, :reporte_archivos
   end

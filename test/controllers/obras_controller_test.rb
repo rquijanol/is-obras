@@ -19,7 +19,7 @@ class ObrasControllerTest < ActionController::TestCase
 
   test "should create obra" do
     assert_difference('Obra.count') do
-      post :create, obra: { empresa_id: @obra.empresa_id, fechafinal: @obra.fechafinal, fechainicial: @obra.fechainicial, importe: @obra.importe, nombre: @obra.nombre, plazo: @obra.plazo }
+      post :create, obra: { empresa_id: 1, fechafinal: @obra.fechafinal, fechainicial: @obra.fechainicial, importe: @obra.importe, nombre: @obra.nombre, plazo: @obra.plazo }
     end
 
     assert_redirected_to obra_path(assigns(:obra))
