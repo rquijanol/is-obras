@@ -5,6 +5,9 @@ require 'dragonfly/dropbox_data_store'
 Dragonfly.app.configure do
   plugin :imagemagick
 url_format "/media/:job/:name"
+
+  protect_from_dos_attacks true
+  secret ENV['IKON']
  
 if Rails.env.development? || Rails.env.test?
   datastore :file,
