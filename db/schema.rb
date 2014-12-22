@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141220015459) do
+ActiveRecord::Schema.define(version: 20141222195943) do
 
   create_table "empresas", force: true do |t|
     t.string   "nombre"
@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(version: 20141220015459) do
     t.integer  "reporte_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "image_uid"
   end
 
   add_index "reporte_archivos", ["reporte_id"], name: "index_reporte_archivos_on_reporte_id"

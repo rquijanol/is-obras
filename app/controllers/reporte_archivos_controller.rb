@@ -4,7 +4,12 @@ class ReporteArchivosController < ApplicationController
   # GET /reporte_archivos
   # GET /reporte_archivos.json
   def index
-    @reporte_archivos = ReporteArchivo.all
+     if params[:obra_id] != nil
+    @reporte = Reporte.find(params[:reporte_id])
+    @reporte_archivos = @reporte.reporte_archivos.all
+      else
+    @reporte_archivos= [];
+  end
   end
 
   # GET /reporte_archivos/1
@@ -69,6 +74,6 @@ class ReporteArchivosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def reporte_archivo_params
-      params.require(:reporte_archivo).permit(:nombre, :path, :tipo, :reporte_id)
+      params.require(:reporte_archivo).permit(:nombre, :reporte_id)
     end
 end
