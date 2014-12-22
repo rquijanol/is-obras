@@ -69,6 +69,6 @@ class ObrasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def obra_params
-      params.require(:obra).permit(:nombre, :importe, :plazo, :fechainicial, :fechafinal, :empresa_id)
+      params.require(:obra).permit(:nombre, :importe, :fechainicial, :fechafinal, :empresa_id)
     end
 end

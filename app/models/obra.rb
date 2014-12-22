@@ -2,7 +2,7 @@ class Obra < ActiveRecord::Base
   belongs_to :empresa
   has_many :reportes
   
-  before_save :calcula_plazo
+  #before_save :calcula_plazo
   
   validates :nombre, presence: true
   validates :empresa_id, presence: true
@@ -16,10 +16,8 @@ class Obra < ActiveRecord::Base
   end
   
   
-  def calcula_plazo
-    unless !self.fechafinal.blank? || !self.fechainicial.blank?
-      self.plazo = (self.fechafinal - self.fechainicial).to_i
-    end
+  def plazo
+     (self.fechafinal - self.fechainicial).to_i unless (self.fechafinal.blank? || self.fechainicial.blank?)
   end
   
 end
