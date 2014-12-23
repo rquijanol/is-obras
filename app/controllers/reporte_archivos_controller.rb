@@ -4,12 +4,10 @@ class ReporteArchivosController < ApplicationController
   # GET /reporte_archivos
   # GET /reporte_archivos.json
   def index
-     if params[:obra_id] != nil
+
     @reporte = Reporte.find(params[:reporte_id])
     @reporte_archivos = @reporte.reporte_archivos.all
-      else
-    @reporte_archivos= [];
-  end
+   
   end
 
   # GET /reporte_archivos/1
@@ -19,6 +17,7 @@ class ReporteArchivosController < ApplicationController
 
   # GET /reporte_archivos/new
   def new
+    @reporte = Reporte.find(params[:reporte_id])
     @reporte_archivo = ReporteArchivo.new
   end
 
@@ -30,14 +29,15 @@ class ReporteArchivosController < ApplicationController
   # POST /reporte_archivos.json
   def create
     @reporte_archivo = ReporteArchivo.new(reporte_archivo_params)
-
+   
+    
     respond_to do |format|
       if @reporte_archivo.save
-        format.html { redirect_to @reporte_archivo, notice: 'Reporte archivo was successfully created.' }
-        format.json { render :show, status: :created, location: @reporte_archivo }
+        format.html { redirect_to reporte_reporte_archivos_path(@reporte_archivo.reporte_id), notice: 'Reporte archivo was successfully created.' }
+      #  format.json { render :show, status: :created, location: @reporte_archivo }
       else
-        format.html { render :new }
-        format.json { render json: @reporte_archivo.errors, status: :unprocessable_entity }
+        format.html { render new_reporte_reporte_archivo(@reporte_archivo.reporte_id) }
+       # format.json { render json: @reporte_archivo.errors, status: :unprocessable_entity }
       end
     end
   end

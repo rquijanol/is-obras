@@ -13,23 +13,18 @@
       </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :nombre %><br>
-    <%= f.text_field :nombre %>
+  <div class="form-group">
+    <%= f.label :nombre %>
+    <%= f.text_field :nombre, class: 'form-control', required: true %>
   </div>
-  <div class="field">
-    <%= f.label :path %><br>
-    <%= f.text_field :path %>
+ 
+  <div class="form-group">
+    <%= f.label :image %>
+    <%= f.file_field :image, required: true %>
   </div>
-  <div class="field">
-    <%= f.label :tipo %><br>
-    <%= f.number_field :tipo %>
-  </div>
-  <div class="field">
-    <%= f.label :reporte_id %><br>
-    <%= f.text_field :reporte_id %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  
+    <%= f.hidden_field :reporte_id, { :value => @reporte.id } %>
+  
+    <%= f.submit 'Submit', class: 'btn btn-primary btn-lg' %>
+
 <% end %>
