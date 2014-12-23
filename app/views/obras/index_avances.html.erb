@@ -1,0 +1,29 @@
+<h1>Obras</h1>
+<br>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Empresa</th>
+      <th>Nombre</th>
+      <th>Fecha Inicial</th>
+      <th>Fecha Final</th>
+      <th>Avances</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @obras.each do |obra| %>
+      <tr>
+        <td><%= obra.empresa.nombre %></td>
+        <td><%= obra.nombre %></td>
+        <td><%= obra.fechainicial %></td>
+        <td><%= obra.fechafinal %></td>
+        <td><%= link_to 'Avances',obra_reportes_path(obra.id) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+

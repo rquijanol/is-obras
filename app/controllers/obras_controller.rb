@@ -6,6 +6,11 @@ class ObrasController < ApplicationController
   def index
     @obras = Obra.all
   end
+  
+  def index_avances
+    @obras = Obra.all
+    render :index_avances
+  end
 
   # GET /obras/1
   # GET /obras/1.json

@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
   get 'contact' => 'static_pages#contact'
   
+    get 'avances' => 'obras#index_avances'
+  
  #  get 'photos' => 'photos#index'
   
   resources :reporte_archivos , only: [:new, :create, :index]
