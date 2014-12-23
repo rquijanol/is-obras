@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   
  #  get 'photos' => 'photos#index'
   
-  #resources :reporte_archivos
+  resources :reporte_archivos
 
   #resources :reporte_detalles
 

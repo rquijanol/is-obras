@@ -1,5 +1,5 @@
 class ReporteArchivosController < ApplicationController
-  before_action :set_reporte_archivo, only: [:show, :edit, :update, :destroy]
+  before_action :set_reporte_archivo, only: [:show, :edit, :destroy]
 
   # GET /reporte_archivos
   # GET /reporte_archivos.json
@@ -38,20 +38,6 @@ class ReporteArchivosController < ApplicationController
       else
         format.html { render new_reporte_reporte_archivo(@reporte_archivo.reporte_id) }
        # format.json { render json: @reporte_archivo.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # PATCH/PUT /reporte_archivos/1
-  # PATCH/PUT /reporte_archivos/1.json
-  def update
-    respond_to do |format|
-      if @reporte_archivo.update(reporte_archivo_params)
-        format.html { redirect_to @reporte_archivo, notice: 'Reporte archivo was successfully updated.' }
-        format.json { render :show, status: :ok, location: @reporte_archivo }
-      else
-        format.html { render :edit }
-        format.json { render json: @reporte_archivo.errors, status: :unprocessable_entity }
       end
     end
   end
