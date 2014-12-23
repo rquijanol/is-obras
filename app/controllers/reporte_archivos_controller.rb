@@ -60,6 +60,6 @@ class ReporteArchivosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def reporte_archivo_params
-      params.require(:reporte_archivo).permit(:nombre, :reporte_id)
+      params.require(:reporte_archivo).permit(:nombre, :image, :reporte_id)
     end
 end

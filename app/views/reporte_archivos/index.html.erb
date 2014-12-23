@@ -1,4 +1,6 @@
 <h1>Archivos</h1>
+
+ <%= link_to 'Agregar', new_reporte_reporte_archivo_path, class: 'btn btn-lg btn-primary' %>
  
 <ul class="row" id="photos-list">
   <% @reporte_archivos.each do |reporte_archivo| %>
@@ -10,4 +12,4 @@
   <% end %>
 </ul>
 
-<%= link_to 'Agregar', new_reporte_reporte_archivo_path, class: 'btn btn-lg btn-primary' %>
+
