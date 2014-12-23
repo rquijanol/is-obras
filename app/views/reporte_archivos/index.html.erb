@@ -5,7 +5,7 @@
 <ul class="row" id="photos-list">
   <% @reporte_archivos.each do |reporte_archivo| %>
     <li class="col-xs-3">
-      <%= link_to image_tag(reporte_archivo.image.thumb('180x180#').url, alt: reporte_archivo.nombre, class: 'thumbnail'),
+      <%= link_to image_tag(reporte_archivo.image.thumb('180x180#').url, alt: reporte_archivo.nombre, class: 'img-thumbnail'),
                   reporte_archivo.image.remote_url, target: '_blank' %>
       <p><%= reporte_archivo.nombre %></p>
     </li>
