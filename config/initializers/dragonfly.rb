@@ -6,11 +6,15 @@ Dragonfly.app.configure do
   plugin :imagemagick
 
 
-  protect_from_dos_attacks true
+  verify_urls true
   secret ENV['IKON']
   url_format "/media/:job/:name"
  
-
+ if Rails.env.development? || Rails.env.test?
+    datastore :file,
+              root_path: Rails.root.join('public/system/dragonfly', Rails.env),
+              server_root: Rails.root.join('public')
+  else
  datastore :dropbox,
   app_key:              ENV['DROPBOX_APP_KEY'],
   app_secret:           ENV['DROPBOX_APP_SECRET'],
@@ -19,7 +23,7 @@ Dragonfly.app.configure do
   user_id:              ENV['DROPBOX_USER_ID'],     
   root_path:            Rails.env # optional
 
-
+end
 
 # Override the .url method...
 define_url do |app, job, opts|

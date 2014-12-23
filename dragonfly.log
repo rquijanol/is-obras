@@ -1,0 +1,4 @@
+# Logfile created on 2014-12-23 19:05:23 +0000 by logger.rb/44203
+W, [2014-12-23T19:05:23.982820 #27977]  WARN -- : DRAGONFLY: configuration option protect_from_dos_attacks is deprecated - use verify_urls instead
+W, [2014-12-23T19:06:36.766213 #28000]  WARN -- : DRAGONFLY: configuration option protect_from_dos_attacks is deprecated - use verify_urls instead
+W, [2014-12-23T19:09:13.695667 #28023]  WARN -- : DRAGONFLY: configuration option protect_from_dos_attacks is deprecated - use verify_urls instead
