@@ -57,4 +57,5 @@ gem 'minitest-reporters', '~>1.0.5', group: :test
 gem 'mini_backtrace',     '~>0.1.3', group: :test
 gem 'mini_magick'
 gem 'dragonfly', '~> 1.0.7'
+gem 'dragonfly-s3_data_store'
 gem 'dragonfly-dropbox_data_store'
