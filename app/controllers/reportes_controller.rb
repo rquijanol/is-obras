@@ -5,11 +5,12 @@ class ReportesController < ApplicationController
   # GET /reportes.json
   def index
    if params[:obra_id] != nil
+    session[:return_to] = request.referer
     @obra = Obra.find(params[:obra_id])
     @reportes = @obra.reportes.all #.paginate(page: params[:page])
-  else
+   else
     @reportes= [];
-  end
+   end
   end
 
   # GET /reportes/1

@@ -14,7 +14,6 @@
       <th>Plazo</th>
       <th>Fecha Inicial</th>
       <th>Fecha Final</th>
-      <th>Avances</th>
       <th colspan="3">Acciones</th>
     </tr>
   </thead>
@@ -28,7 +27,6 @@
         <td><%= obra.plazo %></td>
         <td><%= obra.fechainicial %></td>
         <td><%= obra.fechafinal %></td>
-        <td><%= link_to 'Avances',obra_reportes_path(obra.id) %></td>
         <td><%= link_to 'Show', obra %></td>
         <td><%= link_to 'Edit', edit_obra_path(obra) %></td>
         <td><%= link_to 'Destroy', obra, method: :delete, data: { confirm: 'Are you sure?' } %></td>
