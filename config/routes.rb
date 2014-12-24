@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   get 'contact' => 'static_pages#contact'
   
-    get 'avances' => 'obras#index_avances'
+  get 'avances' => 'obras#index_avances'
   
  #  get 'photos' => 'photos#index'
   
@@ -27,11 +27,13 @@ Rails.application.routes.draw do
   resources :reportes  do
     resources :reporte_detalles,
               :reporte_archivos
+    
   end
   
 
 
   resources :obras do
+
     resources :reportes
   end
 

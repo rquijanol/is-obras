@@ -19,6 +19,12 @@ class ReportesController < ApplicationController
     @reporte = Reporte.find(params[:id])
     @reporte_detalles = @reporte.reporte_detalles.paginate(page: params[:page])
   end
+  
+  
+  def showpdf
+    @reporte = Reporte.find(params[:id])
+    render :pdf_show
+  end
 
   # GET /reportes/new
   def new

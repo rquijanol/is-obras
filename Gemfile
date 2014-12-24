@@ -38,6 +38,8 @@ gem 'bcrypt', '~> 3.1.7'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+gem "haml"
+
 gem 'rails-bootstrap-toggle-buttons'
 gem 'jquery-fileupload-rails'
 gem 'cocoon', '~> 1.2.6'
@@ -53,8 +55,15 @@ group :production do
 end
 
 
+
 gem 'minitest-reporters', '~>1.0.5', group: :test
 gem 'mini_backtrace',     '~>0.1.3', group: :test
+
+#PDF impresion
+gem 'pdfkit'
+gem 'wkhtmltopdf-binary'
+
+#Storage de Imagenes
 gem 'mini_magick'
 gem 'dragonfly', '~> 1.0.7'
 gem 'dragonfly-s3_data_store'
