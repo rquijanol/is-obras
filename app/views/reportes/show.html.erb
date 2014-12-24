@@ -1,60 +1,86 @@
-<p>
-  <h2><%= @reporte.obra.nombre %></h2>
-</p>
-<p>
+<table class="table table-bordered">
+  <tr>
+    <td colspan="2">
+      <strong>Obra:</strong> <%= @reporte.obra.nombre %>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2">
+    <strong>Cliente:</strong><%= @reporte.obra.empresa.nombre %>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%">
+       <strong>Fecha Inicio:</strong>
+<%= @reporte.obra.fechainicial %>
+    </td>
+    <td width="50%">
+          <strong>Fecha Terminacion:</strong>
+<%= @reporte.obra.fechafinal %>
+    </td>
+  </tr>
+  <tr>
+    <td>
   <strong>Fecha:</strong>
-  <%= @reporte.fecha %>
-</p>
-<p>
+  <%= @reporte.fecha %>    
+    </td>
+    <td>
   <strong>Clima:</strong>
-  <%= @reporte.clima %>
-</p>
-
-
+  <%= @reporte.clima %>    
+    </td>
+  </tr>
+  </table>
   <% if @reporte.reporte_detalles.any? %>
-  
-  <table class="table table-bordered">
+  <table  class="table table-bordered">
   <thead>
     <tr>
-      <th>Categoria</th>
-      <th>Numero de Personas</th>
+      <th width="50%">Categoria</th>
+      <th width="50%">Numero de Personas</th>
     </tr>
   </thead>
   <tbody>
       <% @reporte.reporte_detalles.each do |reporte_detalle| %>
       <tr>
-        <td><%= reporte_detalle.numeropersonas %></td>
         <td><%= reporte_detalle.categoria %></td>
+        <td><%= reporte_detalle.numeropersonas %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-   <% end %>
-<p>
-  <strong>Incidencias:</strong>
+  <%end%>
+  <table class="table table-bordered">
+  <tr>
+   <td>
+      <strong>Incidencias:</strong>
   <%= @reporte.incidencias %>
-</p>
-
-<p>
-  <strong>Cambios:</strong>
+   </td> 
+  </tr>
+   <tr>
+   <td>
+       <strong>Cambios:</strong>
   <%= @reporte.cambios %>
-</p>
-
-<p>
-  <strong>Residente:</strong>
+   </td> 
+  </tr>
+   <tr>
+   <td>
+       <strong>Residente:</strong>
   <%= @reporte.residente %>
-</p>
-
-<p>
-  <strong>Supervisor:</strong>
+   </td> 
+  </tr>
+   <tr>
+   <td>
+       <strong>Supervisor:</strong>
   <%= @reporte.supervisor %>
-</p>
-
-<ul>
+   </td> 
+  </tr>
+</table>
+<ul class="row" id="photos-list">
   <% @reporte.reporte_archivos.each do |reporte_archivo| %>
     <li>
       <%= image_tag( reporte_archivo.image.remote_url, size: "480x360", alt: "reporte_archivo.nombre")%>
     </li>
   <% end %>
 </ul>
+
+</table>
 <%= link_to 'Regresar', obra_reportes_path(@reporte.obra_id), class: "btn btn-default" %>
