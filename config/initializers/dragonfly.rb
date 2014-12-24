@@ -1,5 +1,5 @@
 require 'dragonfly'
-require 'dragonfly/dropbox_data_store'
+require 'dragonfly/s3_data_store'
 
 # Configure
 Dragonfly.app.configure do
@@ -15,15 +15,13 @@ Dragonfly.app.configure do
               root_path: Rails.root.join('public/system/dragonfly', Rails.env),
               server_root: Rails.root.join('public')
   else
- datastore :dropbox,
-  app_key:              ENV['DROPBOX_APP_KEY'],
-  app_secret:           ENV['DROPBOX_APP_SECRET'],
-  access_token:         ENV['DROPBOX_ACCESS_TOKEN'],
-  access_token_secret:  ENV['DROPBOX_ACCESS_TOKEN_SECRET'],
-  user_id:              ENV['DROPBOX_USER_ID'],     
-  root_path:            Rails.env # optional
 
-end
+  datastore :s3,
+            bucket_name: ENV['S3_BUCKET_NAME'],
+            access_key_id: ENV['S3_KEY'],
+            secret_access_key: ENV['S3_SECRET'],
+            url_scheme: 'https'
+  end
 
 # Override the .url method...
 define_url do |app, job, opts|
