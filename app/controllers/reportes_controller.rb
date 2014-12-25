@@ -17,6 +17,16 @@ class ReportesController < ApplicationController
   def show
     @reporte = Reporte.find(params[:id])
     @reporte_detalles = @reporte.reporte_detalles.paginate(page: params[:page])
+    
+     respond_to do |format|
+      format.html
+      format.pdf { render :pdf => "report", :layout => 'pdf.html.erb' }
+      
+      end
+    
+    
+    
+
   end
   
   

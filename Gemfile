@@ -60,8 +60,10 @@ gem 'minitest-reporters', '~>1.0.5', group: :test
 gem 'mini_backtrace',     '~>0.1.3', group: :test
 
 #PDF impresion
-gem 'pdfkit'
+#gem 'pdfkit'
+gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
+#gem 'prawn'
 
 #Storage de Imagenes
 gem 'mini_magick'
