@@ -74,13 +74,16 @@
    </td> 
   </tr>
 </table>
+
 <ul class="row" id="photos-list">
   <% @reporte.reporte_archivos.each do |reporte_archivo| %>
     <li>
-      <%= wicked_pdf_image_tag( reporte_archivo.image.remote_url, size: "480x360", alt: "reporte_archivo.nombre")%>
-    </li>
+      <%= wicked_pdf_image_tag( reporte_archivo.image.remote_url, size: "240x180", alt: "reporte_archivo.nombre")%>
+ <p>     <%= reporte_archivo.nombre %></p>
+      <br>
+   </li>
   <% end %>
 </ul>
 
-</table>
-<%= link_to 'Regresar', obra_reportes_path(@reporte.obra_id), class: "btn btn-default" %>
+
+
