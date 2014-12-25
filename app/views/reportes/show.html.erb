@@ -74,13 +74,17 @@
    </td> 
   </tr>
 </table>
-<ul class="row" id="photos-list">
+<table  class="table table-bordered">
+
   <% @reporte.reporte_archivos.each do |reporte_archivo| %>
-    <li>
+  <tr>
+  <td align= "center">
       <%= image_tag( reporte_archivo.image.remote_url, size: "480x360", alt: "reporte_archivo.nombre")%>
-    </li>
+    </td>
+</tr>
   <% end %>
-</ul>
 
 </table>
+<br>
+<br>
 <%= link_to 'Regresar', obra_reportes_path(@reporte.obra_id), class: "btn btn-default" %>

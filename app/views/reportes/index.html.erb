@@ -44,6 +44,9 @@
           <%=link_to 'Ver', reporte %>
         </td>
          <td>
+          <%=link_to 'Pdf', reporte_showpdf_path(reporte.id) %>
+        </td>
+         <td>
           <%=link_to 'Imagenes', reporte_reporte_archivos_path(reporte.id) %>
         </td>
         <td>

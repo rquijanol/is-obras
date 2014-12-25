@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   
   get 'avances' => 'obras#index_avances'
   
+ # get 'reporte_pdf' => 'reportes#showpdf'
+  
  #  get 'photos' => 'photos#index'
   
   resources :reporte_archivos , only: [:new, :create, :index]
@@ -25,6 +27,7 @@ Rails.application.routes.draw do
 
 
   resources :reportes  do
+    get 'showpdf'
     resources :reporte_detalles,
               :reporte_archivos
     

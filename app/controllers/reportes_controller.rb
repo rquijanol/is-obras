@@ -1,6 +1,5 @@
 class ReportesController < ApplicationController
   before_action :set_reporte, only: [:show, :edit, :update, :destroy]
-
   # GET /reportes
   # GET /reportes.json
   def index
@@ -22,7 +21,7 @@ class ReportesController < ApplicationController
   
   
   def showpdf
-    @reporte = Reporte.find(params[:id])
+    @reporte = Reporte.find(params[:reporte_id])
     render :pdf_show
   end
 
