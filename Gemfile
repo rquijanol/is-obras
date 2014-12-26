@@ -39,7 +39,7 @@ gem 'unicorn'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 gem "haml"
-
+gem "non-stupid-digest-assets"
 gem 'rails-bootstrap-toggle-buttons'
 gem 'jquery-fileupload-rails'
 gem 'cocoon', '~> 1.2.6'
