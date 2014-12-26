@@ -7,7 +7,7 @@ class ReportesControllerTest < ActionController::TestCase
   end
 
   test "should get index" do
-    get :index
+    get :index ,:obra_id=> 1
     assert_response :success
     assert_not_nil assigns(:reportes)
   end
@@ -19,7 +19,8 @@ class ReportesControllerTest < ActionController::TestCase
 
   test "should create reporte" do
     assert_difference('Reporte.count') do
-      post :create, reporte: { cambios: @reporte.cambios, clima: @reporte.clima, fecha: @reporte.fecha, incidencias: @reporte.incidencias, obra_id: @reporte.obra_id, residente: @reporte.residente, supervisor: @reporte.supervisor }
+      
+      post :create, reporte: { cambios: @reporte.cambios, clima: @reporte.clima, fecha: @reporte.fecha, incidencias: @reporte.incidencias, obra_id: @reporte.obra_id, residente: @reporte.residente, supervisor: @reporte.supervisor }, :obra_id=> 1
     end
 
     assert_redirected_to reporte_path(assigns(:reporte))
@@ -32,7 +33,7 @@ class ReportesControllerTest < ActionController::TestCase
 
   test "should destroy reporte" do
     assert_difference('Reporte.count', -1) do
-      delete :destroy, id: @reporte
+      delete :destroy, id: @reporte ,:obra_id=> 1
     end
 
     assert_redirected_to reportes_path
