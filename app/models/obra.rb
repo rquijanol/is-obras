@@ -1,6 +1,6 @@
 class Obra < ActiveRecord::Base
   belongs_to :empresa
-  has_many :reportes
+  has_many :reportes, :dependent => :destroy
   
   #before_save :calcula_plazo
   

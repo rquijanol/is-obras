@@ -12,4 +12,8 @@ module ApplicationHelper
   def nombre_empresa
       "Ique Sidi Construcciones S.A. de C.V."
   end
+  
+  def iniciales_empresa
+      "Ique Sidi"
+  end
 end
