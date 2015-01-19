@@ -35,7 +35,7 @@ gem 'unicorn'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
+gem 'cancancan', '~> 1.9'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 gem "haml"

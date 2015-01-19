@@ -57,7 +57,8 @@ class EmpresasController < ApplicationController
   def destroy
     @empresa.destroy
     respond_to do |format|
-      format.html { redirect_to empresas_url, notice: 'Empresa was successfully destroyed.' }
+      flash[:success] ='Empresa was successfully destroyed.'
+      format.html { redirect_to empresas_url}
       format.json { head :no_content }
     end
   end
