@@ -1,5 +1,5 @@
 class ObrasController < ApplicationController
-  before_action :set_obra, only: [:show, :edit, :update, :destroy]
+
     load_and_authorize_resource
 
   # GET /obras
@@ -20,7 +20,7 @@ class ObrasController < ApplicationController
 
   # GET /obras/new
   def new
-    @obra = Obra.new
+  #  @obra = Obra.new
   end
 
   # GET /obras/1/edit
@@ -30,7 +30,7 @@ class ObrasController < ApplicationController
   # POST /obras
   # POST /obras.json
   def create
-    @obra = Obra.new(obra_params)
+#    @obra = Obra.new(obra_params)
 
     respond_to do |format|
       if @obra.save
@@ -69,9 +69,9 @@ class ObrasController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_obra
-      @obra = Obra.find(params[:id])
-    end
+ #   def set_obra
+#      @obra = Obra.find(params[:id])
+ #   end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def obra_params

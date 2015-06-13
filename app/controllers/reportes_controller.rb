@@ -1,5 +1,5 @@
 class ReportesController < ApplicationController
-  before_action :set_reporte, only: [:show, :edit, :update, :destroy]
+ 
   load_and_authorize_resource
   # GET /reportes
   # GET /reportes.json

@@ -11,34 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150202125056) do
+ActiveRecord::Schema.define(version: 20150613000000) do
 
-  create_table "admins", force: true do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "admins", ["email"], name: "index_admins_on_email", unique: true
-  add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
-
-  create_table "empresas", force: true do |t|
+  create_table "empresas", force: :cascade do |t|
     t.string   "nombre"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "descripcion"
   end
 
-  create_table "obras", force: true do |t|
+  create_table "obras", force: :cascade do |t|
     t.string   "nombre"
     t.float    "importe"
     t.integer  "plazo"
@@ -51,21 +33,21 @@ ActiveRecord::Schema.define(version: 20150202125056) do
 
   add_index "obras", ["empresa_id"], name: "index_obras_on_empresa_id"
 
-  create_table "photos", force: true do |t|
+  create_table "photos", force: :cascade do |t|
     t.string   "image_uid"
     t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "projects", force: true do |t|
+  create_table "projects", force: :cascade do |t|
     t.string   "name"
     t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "reporte_archivos", force: true do |t|
+  create_table "reporte_archivos", force: :cascade do |t|
     t.string   "nombre"
     t.string   "path"
     t.integer  "tipo"
@@ -77,7 +59,7 @@ ActiveRecord::Schema.define(version: 20150202125056) do
 
   add_index "reporte_archivos", ["reporte_id"], name: "index_reporte_archivos_on_reporte_id"
 
-  create_table "reporte_detalles", force: true do |t|
+  create_table "reporte_detalles", force: :cascade do |t|
     t.integer  "numeropersonas"
     t.integer  "reporte_id"
     t.datetime "created_at"
@@ -87,7 +69,7 @@ ActiveRecord::Schema.define(version: 20150202125056) do
 
   add_index "reporte_detalles", ["reporte_id"], name: "index_reporte_detalles_on_reporte_id"
 
-  create_table "reportes", force: true do |t|
+  create_table "reportes", force: :cascade do |t|
     t.string   "clima"
     t.date     "fecha"
     t.text     "incidencias"
@@ -101,29 +83,33 @@ ActiveRecord::Schema.define(version: 20150202125056) do
 
   add_index "reportes", ["obra_id"], name: "index_reportes_on_obra_id"
 
-  create_table "roles", force: true do |t|
+  create_table "roles", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string   "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
-  create_table "tasks", force: true do |t|
+  create_table "tasks", force: :cascade do |t|
     t.string   "description"
     t.boolean  "done"
     t.integer  "project_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "user_id"
   end
 
-  create_table "thumbs", force: true do |t|
+  create_table "thumbs", force: :cascade do |t|
     t.string   "uid"
     t.string   "job"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "users", force: true do |t|
+  create_table "users", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "role_id"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
@@ -134,16 +120,10 @@ ActiveRecord::Schema.define(version: 20150202125056) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "provider"
-    t.string   "uid"
-    t.integer  "role_id"
-    t.integer  "roles_mask"
-    t.boolean  "admin"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["role_id"], name: "index_users_on_role_id"
 
 end

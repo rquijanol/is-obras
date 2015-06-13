@@ -7,8 +7,8 @@ class Obra < ActiveRecord::Base
   validates :nombre, presence: true
   validates :empresa_id, presence: true
   validate :fechafinal_cannot_be_earlier_than_fechainicial
-  validate :fechainicial, presence: true
-  validate :fechafinal, presence: true
+  validates :fechainicial, presence: true
+  validates :fechafinal, presence: true
   
   def fechafinal_cannot_be_earlier_than_fechainicial
     errors.add(:fechafinal, "La fecha final no puede ser menor a la inicial") if

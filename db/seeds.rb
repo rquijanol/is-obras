@@ -6,9 +6,18 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-User.create!(email: "rquijanol@gmail.com", password: "mares1186",admin: true)
-User.create!(email: "rquijanol@hotmail.com", password: "mares1186")
 
-['user', 'admin'].each do |role|
-  Role.find_or_create_by({name: role})
-end
+r1 = Role.create({name: "User", description: "Can read items"})
+r2 = Role.create({name: "Supervisor", description: "Can read and create projects"})
+r3 = Role.create({name: "Admin", description: "Can perform any CRUD operation on any resource"})
+
+
+u1 = User.create(email: "rquijanol@gmail.com", password: "mares1186", role_id: r3.id)
+u2 = User.create(email: "rquijanol@hotmail.com", password: "mares1186", role_id: r2.id)
+u2 = User.create(email: "rquijanol@yahooo.com", password: "mares1186", role_id: r1.id)
+
+i1 = Empresa.create({nombre: "Rayban Sunglasses"})
+i2 = Empresa.create({nombre: "Gucci watch"})
+i3 = Empresa.create({nombre: "Henri Lloyd Pullover"})
+i4 = Empresa.create({nombre: "Porsche socks"})
+
