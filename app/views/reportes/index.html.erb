@@ -49,9 +49,13 @@
          <td>
           <%=link_to 'Imagenes', reporte_reporte_archivos_path(reporte.id) %>
         </td>
+        
+  
+  <%if can? :delete, @reporte%>
         <td>
           <%=link_to 'Borrar', reporte, method: :delete, data: { confirm: 'Are you sure?' } %>
         </td>
+        <%end%>
       </tr>
       <% end %>
   </tbody>
