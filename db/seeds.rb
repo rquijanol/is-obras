@@ -12,12 +12,12 @@ r2 = Role.create({name: "Supervisor", description: "Can read and create projects
 r3 = Role.create({name: "Admin", description: "Can perform any CRUD operation on any resource"})
 
 
-u1 = User.create(email: "rquijanol@gmail.com", password: "mares1186", role_id: r3.id)
-u2 = User.create(email: "rquijanol@hotmail.com", password: "mares1186", role_id: r2.id)
-u2 = User.create(email: "rquijanol@yahooo.com", password: "mares1186", role_id: r1.id)
+u1 = User.create(email: "admin@isco.com", password: "12345678", role_id: r3.id)
+u2 = User.create(email: "supervisor@isco.com", password: "12345678", role_id: r2.id)
+u2 = User.create(email: "user@isco.com", password: "12345678", role_id: r1.id)
 
-i1 = Empresa.create({nombre: "Rayban Sunglasses"})
-i2 = Empresa.create({nombre: "Gucci watch"})
-i3 = Empresa.create({nombre: "Henri Lloyd Pullover"})
-i4 = Empresa.create({nombre: "Porsche socks"})
+i1 = Empresa.create({nombre: "Sunglasses"})
+i2 = Empresa.create({nombre: "watch"})
+i3 = Empresa.create({nombre: "Pullover"})
+i4 = Empresa.create({nombre: "Socks"})
 
